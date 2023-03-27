@@ -4,6 +4,7 @@ var AnonymousStrategy = require('passport-anonymous');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var helmet = require("helmet");
 
 var { Liquid } = require('liquidjs');
 
@@ -17,6 +18,8 @@ var indexRouter = require('./routes/index');
 var anonymousRouter = require('./routes/anonymous');
 
 var app = express();
+
+app.use(helmet());
 
 app.engine('liquid', engine.express());
 
