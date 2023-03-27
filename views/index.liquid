@@ -1,15 +1,17 @@
 {% layout 'layout' %}
 
-<ul>
-  {%- for state in states -%}
-    <li>
-      <input
-        type="checkbox"
-        name="{{ state | downcase }}"
-        id="{{ state | downcase }}"
-        value="{{ state | downcase }} /"
-      >
-      <label for="{{ state | downcase }}">{{ state }}</label>
-    </li>
-  {%- endfor -%}
-</ul>
+{%- if states != blank -%}
+  <ul>
+    {%- for state in states -%}
+      <li>
+        <input
+          type="checkbox"
+          name="{{ state | downcase }}"
+          id="{{ state | downcase }}"
+          value="{{ state | downcase }} /"
+        >
+        <label for="{{ state | downcase }}">{{ state }}</label>
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endif -%}
