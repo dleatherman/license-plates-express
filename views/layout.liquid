@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#222222" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#D4E5F5">
+
+    <meta name="description" content="A small Preact app to save USA license plates seen">
+
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+
+    <title>{{ title }}</title>
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="/">
+          <span class="visually-hidden">{{ title }}</span>
+          {% render 'logo' %}
+        </a>
+      </h1>
+    </header>
+
+    {%- block -%}
+    {%- endblock -%}
+
+    <footer>
+      <p>A small site to track license plates seen by <a href="https://danleatherman.com/">Dan Leatherman</a></p>
+    </footer>
+  </body>
+</html>
