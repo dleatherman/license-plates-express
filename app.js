@@ -26,4 +26,8 @@ app.set('view engine', 'liquid');
 
 app.use('/', indexRouter);
 
+app.listen(5000, () => {
+  console.log("Running on port 5000.");
+});
+
 module.exports = app;
