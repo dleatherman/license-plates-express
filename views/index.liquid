@@ -1,17 +1,31 @@
 {% layout 'layout' %}
 
-{%- if states != blank -%}
-  <ul>
-    {%- for state in states -%}
-      <li>
-        <input
-          type="checkbox"
-          name="{{ state | downcase }}"
-          id="{{ state | downcase }}"
-          value="{{ state | downcase }} /"
-        >
-        <label for="{{ state | downcase }}">{{ state }}</label>
-      </li>
-    {%- endfor -%}
-  </ul>
+{%- if isAuthenticated -%}
+
+{%- if saved -%}
+  <h1>Saved</h1>
+{%- endif -%}
+
+  <form action="/save" method="post">
+
+    {%- if states != blank -%}
+      <ul>
+        {%- for state in states -%}
+          <li>
+            <input
+              type="checkbox"
+              name="{{ state | downcase }}"
+              id="{{ state | downcase }}"
+              value="true"
+            >
+            <label for="{{ state | downcase }}">{{ state }}</label>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    <button type="submit">Save</button>
+
+  </form>
+  
 {%- endif -%}

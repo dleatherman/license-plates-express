@@ -13,11 +13,10 @@ require("dotenv").config();
 
 router.get(
   "/login",
-  passport.authenticate(['auth0', 'anonymous'], {
+  passport.authenticate(['auth0'], {
     scope: "openid email profile", session: false
   }),
   (req, res) => {
-    res.render('index', { title: 'License Plates' });
     res.redirect("/");
   }
 );

@@ -21,6 +21,7 @@ const engine = new Liquid({
 var indexRouter = require('./routes/index');
 var anonymousRouter = require('./routes/anonymous');
 var authRouter = require('./routes/auth');
+var saveRouter = require('./routes/save');
 
 var app = express();
 
@@ -56,7 +57,9 @@ const auth0Strategy = new Auth0Strategy(
   }
 );
 
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false,
+}));
 
 app.engine('liquid', engine.express());
 
@@ -93,5 +96,6 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/', authRouter);
 app.use('/', anonymousRouter);
+app.use('/', saveRouter);
 
 module.exports = app;
