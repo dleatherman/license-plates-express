@@ -8,13 +8,16 @@
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
     "express": "~4.16.1",
+    "express-session": "^1.17.3",
     "helmet": "^6.0.1",
     "http-errors": "~1.6.3",
     "liquidjs": "^10.7.0",
     "morgan": "~1.9.1",
     "passport": "^0.6.0",
-    "passport-anonymous": "^1.0.1"
+    "passport-anonymous": "^1.0.1",
+    "passport-auth0": "^1.4.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"

@@ -26,6 +26,11 @@
           {% render 'logo' %}
         </a>
       </h1>
+      {%- if isAuthenticated -%}
+        <a href="/logout">Logout</a>
+      {%- else -%}
+        <a href="/login">Login</a>
+      {%- endif -%}
     </header>
 
     {%- block -%}
